@@ -1,0 +1,27 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "$(capture).js, $(capture).*.ts, $(capture).*.js",
+    "*.js": "$(capture).js.map, $(capture).*.ts, $(capture).*.js",
+    "tsconfig.json": "tsconfig.*.json",
+    "Dockerfile": "docker-compose.yml, docker-compose.*.yml, .dockerignore",
+    ".prettierrc": ".prettierignore",
+    "jest.config.ts": "jest-e2e.config.ts",
+    ".env": ".env.*",
+    "package.json": ".npmrc, yarn.lock, .yarnrc, .nvmrc"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editor.tabSizing": "shrink",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.prettier": true,
+    "source.fixAll.markdownlint": true
+  },
+  "eslint.validate": ["javascript", "typescript"],
+  "material-icon-theme.activeIconPack": "nest",
+  "files.eol": "\n"
+}
