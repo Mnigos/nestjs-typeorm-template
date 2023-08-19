@@ -1,8 +1,8 @@
+// eslint-disable-next-line unicorn/no-empty-file
 module.exports = {
   root: true,
   env: {
     node: true,
-    jest: true,
     es2021: true,
   },
   parser: '@typescript-eslint/parser',
@@ -15,7 +15,7 @@ module.exports = {
     settings: {
       'import/resolver': {
         node: {
-          paths: ['~/', '@modules/', '@common/'],
+          paths: ['~/', '@modules/', '@common/', '@config/'],
           extensions: ['.js', '.ts'],
         },
         alias: {
@@ -23,6 +23,7 @@ module.exports = {
             ['~', './src'],
             ['@modules', './src/modules'],
             ['@common', './src/common'],
+            ['@config', './src/config'],
           ],
           extensions: ['.ts', '.js'],
         },

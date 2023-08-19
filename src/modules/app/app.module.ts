@@ -4,7 +4,7 @@ import { ConfigModule } from '@nestjs/config'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 
-import { environmentValidationSchema } from '~/config'
+import { environmentValidationSchema } from '@config/environment'
 
 @Module({
   imports: [

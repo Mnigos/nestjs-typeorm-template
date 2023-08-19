@@ -2,8 +2,7 @@ import { NestFactory, Reflector } from '@nestjs/core'
 import { ConfigService } from '@nestjs/config'
 import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common'
 
-import { Environment } from './config'
-
+import { Environment } from '@config/environment'
 import { AppModule } from '@modules/app'
 
 async function bootstrap() {
