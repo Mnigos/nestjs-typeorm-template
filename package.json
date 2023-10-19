@@ -24,6 +24,11 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli",
+    "migration:run": "npm run typeorm -- migration:run -d ./src/config/typeorm.config.ts",
+    "migration:generate": "npm run typeorm -- migration:generate -d ./src/config/typeorm.config.ts ./src/migrations/$NAME",
+    "migration:create": "npm run typeorm -- migration:create ./src/migrations/$NAME",
+    "migration:revert": "npm run typeorm -- migration:revert -d ./src/config/typeorm.config.ts",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -31,11 +36,14 @@
     "@nestjs/config": "^3.1.1",
     "@nestjs/core": "^10.2.7",
     "@nestjs/platform-express": "^10.2.7",
+    "@nestjs/typeorm": "10.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "joi": "^17.11.0",
+    "pg": "8.11.3",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "typeorm": "0.3.17"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.0",
