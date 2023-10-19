@@ -10,11 +10,11 @@ describe('AppController', () => {
       controllers: [AppController],
     }).compile()
 
-    appController = app.get<AppController>(AppController)
+    appController = app.get(AppController)
   })
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
+    test('should return "Hello World!"', () => {
       expect(appController.getHello()).toBe('Hello World!')
     })
   })

@@ -1,15 +1,15 @@
-import { TestingModule, Test } from '@nestjs/testing'
+import { Test } from '@nestjs/testing'
 import { INestApplication } from '@nestjs/common'
 import * as pactum from 'pactum'
 
-import { AppModule } from '../src/modules/app/app.module'
+import { AppModule } from '@modules/app'
 
 describe('AppController (e2e)', () => {
   let app: INestApplication
   let url: string
 
   beforeEach(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
+    const moduleFixture = await Test.createTestingModule({
       imports: [AppModule],
     }).compile()
 
@@ -26,6 +26,6 @@ describe('AppController (e2e)', () => {
     await app.close()
   })
 
-  it('/ (GET)', () =>
+  test('/ (GET)', () =>
     pactum.spec().get('/').expectStatus(200).expectBody('Hello World!'))
 })

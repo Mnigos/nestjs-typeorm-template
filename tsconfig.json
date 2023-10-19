@@ -22,8 +22,8 @@
       "@modules/*": ["src/modules/*"],
       "@common/*": ["src/common/*"],
       "@config/*": ["src/config/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
-  "include": ["src"],
-  "exclude": ["**/*.spec.ts"]
+  "include": ["src", "tests"]
 }

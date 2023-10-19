@@ -53,7 +53,7 @@ module.exports = {
       },
     },
   ],
-  ignorePatterns: ['**/node_modules/**', '**/dist/**', 'README.md'],
+  ignorePatterns: ['**/node_modules/**', '**/dist/**', '**/*.md'],
   rules: {
     'prettier/prettier': 'warn',
     'prefer-const': 'warn',
