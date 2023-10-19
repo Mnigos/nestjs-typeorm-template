@@ -14,3 +14,21 @@ services:
     volumes:
       - .:/usr/app/src
       - /usr/app/src/node_modules
+    depends_on:
+      - postgres
+
+  postgres:
+    image: bitnami/postgresql:latest
+    ports:
+      - ${DATABASE_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+
+    volumes:
+      - 'postgresql_data:/bitnami/postgresql'
+
+volumes:
+  postgresql_data:
+    driver: local
