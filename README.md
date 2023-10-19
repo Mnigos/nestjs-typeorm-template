@@ -1,6 +1,6 @@
 # NestJS TypeORM Template
 
-Nestjs TypeORM template repository
+Nestjs template with TypeORM, Docker, SWC, Vitest and predefined scalable directory structure.
 
 ## Tech stack
 
