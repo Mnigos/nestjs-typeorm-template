@@ -20,6 +20,7 @@ export default defineConfig({
         'index.ts',
         'main.ts',
       ],
+      all: true,
     },
   },
   resolve: {
