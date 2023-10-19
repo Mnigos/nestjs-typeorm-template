@@ -5,6 +5,7 @@ export default defineConfig({
   test: {
     globals: true,
     root: './',
+    include: ['**/*.{spec,e2e-spec}.?(c|m)[jt]s?(x)'],
     coverage: {
       reporter: ['text', 'json', 'html', 'lcov'],
       exclude: [
