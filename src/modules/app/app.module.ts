@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common'
-import { ConfigModule } from '@nestjs/config'
+import { ConfigModule, ConfigService } from '@nestjs/config'
+import { TypeOrmModule } from '@nestjs/typeorm'
 
 import { AppController } from './app.controller'
 
 import { environmentValidationSchema } from '@config/environment'
+import { typeorm } from '@config/database'
 
 @Module({
   imports: [
@@ -11,6 +13,13 @@ import { environmentValidationSchema } from '@config/environment'
       isGlobal: true,
       envFilePath: './.env',
       validationSchema: environmentValidationSchema,
+      load: [typeorm],
+    }),
+    TypeOrmModule.forRootAsync({
+      useFactory: (configService: ConfigService) =>
+        configService.get('typeorm'),
+      imports: [ConfigModule],
+      inject: [ConfigService],
     }),
   ],
   controllers: [AppController],
