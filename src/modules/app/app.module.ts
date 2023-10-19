@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 
 import { AppController } from './app.controller'
-import { AppService } from './app.service'
 
 import { environmentValidationSchema } from '@config/environment'
 
@@ -15,6 +14,5 @@ import { environmentValidationSchema } from '@config/environment'
     }),
   ],
   controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
