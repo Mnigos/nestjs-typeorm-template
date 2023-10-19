@@ -105,6 +105,12 @@ jobs:
 
       - name: Run unit tests 🧪
         run: yarn test:coverage
+        env:
+          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+          DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          DATABASE_HOST: ${{  secrets.DATABASE_HOST }}
 
       - name: Collect coverage
         uses: codecov/codecov-action@v3
